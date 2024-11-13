@@ -10,7 +10,7 @@ public:
         {
             if(matrix[mid/col][mid%col]==target)
             {
-                return true;
+                return 1;
             }
             else if(matrix[mid/col][mid%col]>target)
             {
@@ -22,7 +22,7 @@ public:
             }
             mid=start +(end-start)/2;
         }
-        return false;
+        return 0;
         
     }
 };
