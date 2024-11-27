@@ -11,7 +11,7 @@ public:
     vector<int> shortestDistanceAfterQueries(int n, vector<vector<int>>& queries) {
         vector<int> distances(n);
         for (int i = 0; i < n; ++i) {
-            distances[i] = n - 1 - i;
+            distances[i] = n - 1 - i;   
         }
         
         vector<vector<int>> graph(n);
