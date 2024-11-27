@@ -17,7 +17,21 @@ public:
         vector<vector<int>> graph(n);
         for (int i = 0; i + 1 < n; ++i) {
             graph[i + 1].push_back(i);
+        } /*for creation dynamic memory for 2d matrix
+        1d: int *arr= new int[row]
+        delete a;
+        delete []arr;
+        2d: int **arr=new int *[row];
+        for(int i=0;i<row;i++)
+        {
+            arr[i]=new int[col];
         }
+        for deleating: 
+        for(int i=0;i<row;i++)
+        {
+            delete []arr[i]
+        }
+        delete []arr; dynammic memory things done at run time of memory allocation */
         
         vector<int> answer(queries.size());
         int queryIdx = 0;
