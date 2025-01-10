@@ -7,12 +7,14 @@ public:
         for (const auto& word : requiredWords) {
             memset(tempCharFreq, 0, sizeof tempCharFreq);//To Set Temp freq all to zero 
 //You can do vector<int> tempCharFreq(26,0);
-            for (char ch : word) {
-                tempCharFreq[ch - 'a']++;
+            for (char ch : word) 
+            {
+              tempCharFreq[ch - 'a']++;
             }
             for (int i = 0; i < 26; ++i) {
                 maxCharFreq[i] = max(maxCharFreq[i], tempCharFreq[i]);
             }
+
         }
         
         vector<string> universalWords;
