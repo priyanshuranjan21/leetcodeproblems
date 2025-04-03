@@ -1,28 +1,29 @@
 class Solution {
 public:
-    long long maximumTripletValue(vector<int>& nums) {
+//bestapproch
+    long long maximumTripletValue(vector<int>& nums)
+    {
         int n = nums.size();
+        long long   maxresult=0,result;
+        vector<int>rmax(n);
 
-        //Early termination for small arrays
         if (n < 3) return 0;
-        
-        long long max_result = 0;
-        int max_value = nums[0];
-        int max_diff = 0;
-
-        for (int i=1 ; i<n ; i++) {
-            //Use current number as nums[k]
-            max_result = max(max_result , (long long)max_diff * nums[i]);
-
-
-            //Use current number as nums[j]
-            max_diff = max(max_diff , max_value - nums[i]);
-            
-
-            //Use current number as nums[i] for future calculations
-            max_value = max(max_value , nums[i]);
+        //12,6,1,2,7
+        int max1=nums[n-1];
+        for(int i=n-2;i>=1;--i)
+        {
+            rmax[i]=max1;
+            max1=max(max1,nums[i]);
+        }
+        int max2=nums[0];
+        for(int i=1;i<n-1;i++)
+        {
+            max2=max(max2,nums[i]);
+            result = (1LL * (max2 - nums[i])) * rmax[i];
+            maxresult=max(maxresult,result);
         }
 
-        return max_result;
+    return maxresult;
+        
     }
 };
