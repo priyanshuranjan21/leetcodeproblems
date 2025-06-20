@@ -33,7 +33,7 @@ public:
 
             //to view the sortest path 
             int real_dist = abs(x) + abs(y);
-            int dist = min(real_dist + 2 * k, i + 1);
+            int dist = min(real_dist + 2 * k, i+1 );
 
             
             ans = max(ans, dist);
